@@ -4,12 +4,10 @@ import { routes } from "./routes";
 
 const app = express();
 
-const port = 3333;
-
 app.use(cors());
 app.use(express.json());
 app.use(routes);
 
-app.listen(port, () => {
-  console.log(`Dev server running at http://localhost:${port}`);
+app.listen(process.env.PORT || 3333, () => {
+  console.log(`HTTP server running!`);
 });
